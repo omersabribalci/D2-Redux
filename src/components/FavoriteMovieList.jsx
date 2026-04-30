@@ -1,7 +1,7 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { removeFavorite } from '../store/actions/favoritesActions';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { removeFavorite } from "../store/actions/favoritesActions";
 
 const FavoriteMovieList = (props) => {
   const favorites = useSelector((state) => state.favorites.favorites);
@@ -12,12 +12,8 @@ const FavoriteMovieList = (props) => {
       {
         <div className="pt-3 text-sm">
           {favorites.map((movie) => (
-            <div className="py-1 flex gap-2 justify-between">
-              <Link
-                key={movie.id}
-                to={`/movies/${movie.id}`}
-                data-testid="favorite-movie"
-              >
+            <div key={movie.id} className="py-1 flex gap-2 justify-between">
+              <Link to={`/movies/${movie.id}`} data-testid="favorite-movie">
                 {movie.title}
               </Link>
               <span
